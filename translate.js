@@ -5,17 +5,13 @@ exchange=document.querySelector("#exchange"),
 from_mic=document.querySelector('#from-mic'),
 to_mic=document.querySelector('#to-mic'),
 btn=document.querySelector('#button');
+
+
 select.forEach((tag,id)=>{
 for(const key in country){
 
-    let selected;
-    if(id==0 && key=="en-US"){
-        selected="selected";
-    }
-    else if(id==1 && key=="hi-IN")
-    {
-        selected="selected";
-    }
+        let selected = id == 0 ? key == "en-GB" ? "selected" : "" : key == "hi-IN" ? "selected" : "";
+     
     // console.log(country[key]);
 let option=`<option value="${key}">${country[key]}</option>`;
 tag.insertAdjacentHTML("beforeend",option);//adding tags in select tag
